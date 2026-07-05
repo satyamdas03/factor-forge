@@ -1,0 +1,164 @@
+================================================================================
+PROJECT SPEC: FACTOR FORGE
+Replication, Decay & Ensemble Engine for Cross-Sectional Equity Factors
+================================================================================
+
+PROJECT MISSION STATEMENT
+--------------------------------------------------------------------------------
+Build the cleanest, most reproducible open-source equity factor-replication
+engine. The goal is to take the academic "factor zoo" (momentum, value, quality,
+low-volatility, profitability, investment, etc.) and make it runnable, honest,
+and ML-ready — with transaction costs, survivorship-bias handling, and
+decay analysis.
+
+WHAT WE ARE BUILDING
+--------------------------------------------------------------------------------
+A research platform that:
+1. Downloads and cleans free US equity data
+2. Computes 30+ cross-sectional factors historically
+3. Builds long/short or long-only portfolios by factor
+4. Accounts for transaction costs, slippage, and delisting
+5. Measures factor decay, turnover, capacity, and regime performance
+6. Trains ML ensembles that combine factors walk-forward
+7. Produces publication-ready reports and an interactive dashboard
+
+THE MARKET GAP THIS CLOSES
+--------------------------------------------------------------------------------
+- Quantopian died; zipline is stale; pyfolio/empyrical are abandoned.
+- Most public factor code uses gross returns, ignores transaction costs, and
+  suffers from look-ahead bias.
+- There is no modern open-source package that lets a retail researcher or
+  student honestly answer: "Does this factor still work after costs?"
+- FactorForge becomes the go-to educational/research starting point.
+
+WHY THIS GETS YOU HIRED AT A QUANT FIRM
+--------------------------------------------------------------------------------
+1. Shows you understand that quant trading is signal research, not prediction.
+2. Proves you can handle messy financial data and avoid look-ahead bias.
+3. Demonstrates you care about net Sharpe, turnover, and capacity.
+4. ML ensemble layer shows time-series ML and cross-sectional modeling.
+5. You can discuss factor crowding, decay, and why some factors stop working.
+
+CORE FEATURES & MODULES
+--------------------------------------------------------------------------------
+1. Data Pipeline
+   - Polygon.io or Databento end-of-day prices
+   - Free fundamentals from FRED / SEC / OpenBB
+   - Delisting-aware survival handling
+   - Look-ahead bias prevention (point-in-time only)
+
+2. Factor Library (30+ factors, grouped by theme)
+   - Momentum: 12-1 month, 52-week high, residual momentum
+   - Value: P/E, P/B, EV/EBITDA, P/FCF
+   - Quality: ROE, gross margin stability, accruals
+   - Low volatility: idiosyncratic volatility, beta, max drawdown
+   - Investment: asset growth, capex growth, issuance
+   - Profitability: ROA, gross profits / assets
+   - Sentiment: short interest, analyst revisions
+   - Macro-sensitive: inflation beta, rate sensitivity
+
+3. Backtest Engine
+   - Monthly rebalancing
+   - Decile portfolio construction
+   - Transaction-cost model (bps per dollar traded)
+   - Slippage model
+   - Long/short and long-only variants
+
+4. Analytics Suite
+   - Cumulative return, Sharpe, max drawdown, Calmar
+   - Factor decay analysis (rolling IC, half-life)
+   - Turnover and capacity curves
+   - Regime-dependent performance (VIX regimes, macro regimes)
+   - Correlation matrix and redundancy analysis
+
+5. ML Ensemble Layer
+   - Walk-forward cross-validation
+   - Regime detection (HMM / clustering)
+   - LightGBM / XGBoost factor combination
+   - Feature importance and SHAP values
+   - Conformal prediction for return forecasts
+
+6. Reporting
+   - HTML report with plots
+   - Jupyter notebook templates
+   - Interactive Streamlit/Next.js dashboard
+
+TECH STACK
+--------------------------------------------------------------------------------
+- Python 3.11+
+- pandas / polars for data manipulation
+- NumPy / SciPy / statsmodels
+- scikit-learn / LightGBM / XGBoost
+- PyMC or conformal prediction for uncertainty
+- OpenBB / Polygon / Databento for data
+- matplotlib / plotly for visualization
+- pytest for tests
+
+SUCCESS METRICS
+--------------------------------------------------------------------------------
+- Replicate at least 20 classic factors
+- Net-of-cost Sharpe > 0.5 for at least 5 factors on 15-year US data
+- Detect and report factor decay for momentum/value
+- ML ensemble improves over equal-weight factor combination
+- 100% data-pipeline test coverage
+- Publish 2+ blog posts analyzing findings
+
+BUILD PHASES
+--------------------------------------------------------------------------------
+Phase 0 (v0.1 — weeks 1-3): Data + 5 core factors
+  - Polygon EOD pipeline
+  - Momentum, value, quality, low-vol, investment factors
+  - Simple decile backtest
+
+Phase 1 (v0.2 — weeks 4-6): Transaction costs + 20 factors
+  - Cost model
+  - Expanded factor library
+  - Long/short analytics
+
+Phase 2 (v0.3 — weeks 7-10): Decay + regime analysis
+  - Rolling IC, half-life
+  - VIX / recession regime splits
+  - Factor correlation and redundancy
+
+Phase 3 (v0.4 — weeks 11-14): ML ensemble
+  - Walk-forward validation
+  - Regime-aware combination
+  - Conformal prediction layer
+
+Phase 4 (v0.5 — months 4-6): Dashboard + research notes
+  - Interactive dashboard
+  - Publication-quality report generation
+  - Blog series on "What still works in the 2020s?"
+
+INTERVIEW TALKING POINTS
+--------------------------------------------------------------------------------
+- "Most retail factor backtests report gross returns. FactorForge reports
+  net-of-cost Sharpe and turnover-adjusted returns."
+- "I found momentum still works but turnover is high; low-vol is crowded and
+  decayed post-2020."
+- "I combined factors with a walk-forward LightGBM ensemble and added conformal
+  prediction intervals for risk."
+- "I handle delisting and point-in-time fundamentals to avoid look-ahead bias."
+
+DIFFERENTIATOR / REVOLUTIONARY ANGLE
+--------------------------------------------------------------------------------
+Honest, modern, reproducible factor research with:
+1. Real transaction-cost accounting
+2. Look-ahead-bias-free data pipeline
+3. Factor decay + regime analysis
+4. ML ensemble + conformal prediction
+5. Open-source + free data
+This combination does not exist in one open-source tool today.
+
+REPO NAME CANDIDATES
+--------------------------------------------------------------------------------
+- factor-forge
+- factor-zoo-reloaded
+- quant-factor-lab
+
+FUTURE EXTENSIONS
+--------------------------------------------------------------------------------
+- International equity factors (Australia, Europe, Japan)
+- Options-based factor replication
+- Alternative data factors (sentiment, ETF flow)
+- Cross-sectional deep-learning models
