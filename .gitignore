@@ -53,6 +53,16 @@ logs/
 # Notebooks
 .ipynb_checkpoints/
 
+# Docs
+site/
+
+# Tool caches
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.benchmarks/
+.claude/
+
 # Misc
 .env
 *.secret

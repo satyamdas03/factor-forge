@@ -1,0 +1,48 @@
+site_name: Factor Forge
+site_description: Modern, reproducible factor zoo replication engine
+site_author: Satyam Das
+site_url: https://satyamdas03.github.io/factor-forge/
+repo_name: satyamdas03/factor-forge
+repo_url: https://github.com/satyamdas03/factor-forge
+
+nav:
+  - Home: index.md
+  - Quickstart: quickstart.md
+  - Factors: factors.md
+  - API Reference: api.md
+  - Blog:
+      - Factor Zoo in the 2020s: blog/factor-zoo-2020s.md
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [factor_forge]
+          options:
+            docstring_style: google
+            show_source: true
+
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - admonition
+  - toc:
+      permalink: true
