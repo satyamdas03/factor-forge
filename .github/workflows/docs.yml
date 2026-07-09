@@ -28,7 +28,12 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -e ".[docs]"
+          pip install ".[docs]"
+
+      - name: Verify package import
+        run: |
+          python -c "import factor_forge; print(factor_forge.__version__)"
+          python -c "from factor_forge.data.loader import DataLoader; print('DataLoader OK')"
 
       - name: Build MkDocs site
         run: mkdocs build --strict

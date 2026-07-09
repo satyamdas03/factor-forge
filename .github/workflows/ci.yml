@@ -32,6 +32,8 @@ jobs:
 
       - name: Lint with ruff
         run: |
+          ruff --version
+          python -c "import factor_forge; print('ruff sees factor_forge at:', factor_forge.__file__)"
           ruff check factor_forge tests
           ruff format --check factor_forge tests
 
