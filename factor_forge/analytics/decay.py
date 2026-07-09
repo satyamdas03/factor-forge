@@ -9,7 +9,7 @@ import pandas as pd
 def factor_autocorrelation(scores: pd.Series, lag: int = 1) -> pd.Series:
     """Compute rank autocorrelation of factor scores at a given lag."""
     ranks = scores.groupby(level="date").rank(pct=False, method="average")
-    shifted = ranks.groupby("symbol").shift(lag)
+    shifted = ranks.groupby(level="symbol").shift(lag)
     df = pd.DataFrame({"rank": ranks, "lag_rank": shifted}).dropna()
 
     def _corr(sub: pd.DataFrame) -> float:

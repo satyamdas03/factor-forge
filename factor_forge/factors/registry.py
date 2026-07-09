@@ -39,6 +39,10 @@ class FactorRegistry:
             return names
         return [name for name in names if self._factors[name].category == category]
 
+    def __len__(self) -> int:
+        """Number of registered factors."""
+        return len(self._factors)
+
     def load_builtin(self) -> None:
         """Load all built-in factors into the registry."""
         for factor in BUILTIN_FACTORS:

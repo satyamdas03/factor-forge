@@ -68,7 +68,10 @@ def compute_metrics(
 
 def _infer_periods_per_year(returns: pd.Series) -> int:
     """Infer the number of periods per year from the index frequency."""
-    freq = pd.infer_freq(returns.index)
+    try:
+        freq = pd.infer_freq(returns.index)
+    except (TypeError, ValueError):
+        freq = None
     if freq in ("D", "B"):
         return 252
     if freq in ("W", "W-FRI"):

@@ -38,7 +38,7 @@ def split_by_regime(
 ) -> dict[str, pd.Series]:
     """Split returns into groups by regime label."""
     aligned_regimes = regimes.reindex(returns.index).ffill().fillna("neutral")
-    groups: dict[str, list[pd.Series]] = {}
-    for label, mask in aligned_regimes.groupby(aligned_regimes).groups.items():
-        groups[str(label)] = returns.loc[returns.index.isin(mask)]
-    return groups
+    result: dict[str, pd.Series] = {}
+    for label, group_returns in returns.groupby(aligned_regimes):
+        result[str(label)] = group_returns
+    return result

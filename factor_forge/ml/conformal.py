@@ -56,6 +56,8 @@ def empirical_coverage(
     intervals: pd.DataFrame,
 ) -> float:
     """Compute the empirical coverage of a conformal interval DataFrame."""
-    df = pd.concat([y_true, intervals], axis=1).dropna()
+    df = pd.concat(
+        [y_true.rename("target"), intervals[["lower", "upper"]]], axis=1
+    ).dropna()
     covered = (df["target"] >= df["lower"]) & (df["target"] <= df["upper"])
     return float(covered.mean()) if len(covered) > 0 else 0.0

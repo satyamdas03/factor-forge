@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "factor-forge-quant"
-version = "0.1.1"
+version = "0.1.2"
 description = "Modern, reproducible factor zoo replication engine with transaction costs, decay analysis, and ML ensembles"
 readme = "README.md"
 license = "MIT"

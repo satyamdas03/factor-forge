@@ -15,7 +15,7 @@ def factor_correlation_matrix(
 
 def average_pairwise_correlation(corr: pd.DataFrame) -> float:
     """Mean absolute off-diagonal correlation."""
-    values = corr.values
+    values = corr.values.copy()
     np.fill_diagonal(values, np.nan)
     return float(np.nanmean(np.abs(values)))
 
