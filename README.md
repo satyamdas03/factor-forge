@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/satyamdas03/factor-forge/actions/workflows/ci.yml/badge.svg)](https://github.com/satyamdas03/factor-forge/actions/workflows/ci.yml)
 [![Docs](https://github.com/satyamdas03/factor-forge/actions/workflows/docs.yml/badge.svg)](https://satyamdas03.github.io/factor-forge/)
-[![PyPI](https://img.shields.io/pypi/v/factor-forge.svg)](https://pypi.org/project/factor-forge/)
+[![PyPI](https://img.shields.io/pypi/v/factor-forge-quant.svg)](https://pypi.org/project/factor-forge-quant/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 **A modern, reproducible factor zoo replication engine for cross-sectional equity research.**
@@ -41,6 +41,12 @@ cd factor-forge
 python -m venv .venv
 source .venv/bin/activate  # Windows: .venv\Scripts\activate
 pip install -e ".[dev]"
+```
+
+Or install from PyPI:
+
+```bash
+pip install factor-forge-quant
 ```
 
 Run a backtest on a single factor using cached or Polygon data:
