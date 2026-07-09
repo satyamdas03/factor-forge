@@ -39,7 +39,7 @@ ENV/
 Thumbs.db
 
 # Data / artifacts
-data/
+/data/
 *.parquet
 *.csv
 *.h5
