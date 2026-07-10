@@ -17,7 +17,8 @@ def _has_lightgbm() -> bool:
         import lightgbm as lgb  # noqa: F401
 
         return True
-    except ImportError:
+    except (ImportError, OSError):
+        # OSError can occur on macOS if the libomp runtime is missing.
         return False
 
 

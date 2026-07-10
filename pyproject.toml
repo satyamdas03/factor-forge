@@ -23,7 +23,7 @@ classifiers = [
     "Topic :: Office/Business :: Financial",
 ]
 dependencies = [
-    "numpy>=1.24,<2.1",
+    "numpy>=1.24,<3.0",
     "pandas>=2.0",
     "requests>=2.31",
     "scipy>=1.11",
@@ -97,7 +97,9 @@ quote-style = "double"
 indent-style = "space"
 
 [tool.mypy]
-python_version = "3.11"
+# NumPy 2.1+ stubs use Python 3.12 "type" statement syntax; target 3.12 lets mypy
+# parse them while the project still supports Python 3.11+ at runtime.
+python_version = "3.12"
 strict = true
 warn_return_any = true
 warn_unused_configs = true

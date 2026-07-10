@@ -79,6 +79,7 @@ def test_conformal_coverage() -> None:
 def test_lightgbm_not_available_without_extra() -> None:
     try:
         import lightgbm  # noqa: F401
-    except ImportError:
+    except (ImportError, OSError):
+        # OSError on macOS when the libomp runtime is missing.
         with pytest.raises(ImportError):
             FactorEnsemble(model_type="lightgbm")
