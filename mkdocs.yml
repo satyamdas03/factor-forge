@@ -9,6 +9,8 @@ nav:
   - Home: index.md
   - Quickstart: quickstart.md
   - Factors: factors.md
+  - Dashboard: dashboard.md
+  - Research Reports: report.md
   - API Reference: api.md
   - Blog:
       - Factor Zoo in the 2020s: blog/factor-zoo-2020s.md

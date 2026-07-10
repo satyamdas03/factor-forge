@@ -29,7 +29,7 @@ Factor Forge takes the academic "factor zoo" — momentum, value, quality, low-v
 - Measure **information coefficient (IC)**, **factor decay**, **turnover**, and **regime performance**.
 - Train a **walk-forward LightGBM ensemble** that combines factors without peeking.
 - Add **conformal prediction intervals** for return forecasts.
-- Generate **publication-ready plots** and an **MkDocs-powered docs site**.
+- Generate **publication-ready plots**, **interactive HTML research reports**, and a **Streamlit dashboard**.
 
 ---
 
@@ -53,7 +53,20 @@ Run a backtest on a single factor using cached or Polygon data:
 
 ```bash
 export POLYGON_API_KEY=your_key_here
-factor-forge --factor momentum_12_1 --start 2015-01-01 --end 2024-01-01 --top-n 100
+factor-forge --factor momentum_12_1 --start 2015-01-01 --end 2024-01-01
+```
+
+Generate an HTML research report:
+
+```bash
+ff-report --factor momentum_12_1 --start 2015-01-01 --end 2024-01-01 --output reports
+```
+
+Launch the interactive dashboard:
+
+```bash
+pip install "factor-forge-quant[dashboard]"
+ff-dashboard
 ```
 
 Or from Python:
@@ -115,7 +128,7 @@ factor_forge/
 | v0.2.0 | 15+ factors + transaction costs + analytics | ✅ |
 | v0.3.0 | Factor decay, turnover, regime analysis | ✅ |
 | v0.4.0 | ML ensemble + conformal prediction | ✅ |
-| v0.5.0 | Dashboard + research report generation | 🔲 |
+| v0.5.0 | Dashboard + research report generation | ✅ |
 
 ---
 

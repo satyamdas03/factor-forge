@@ -13,11 +13,12 @@ It is designed for quant researchers, students, and job candidates who want to a
 - **Backtest engine** — monthly decile rebalancing with transaction costs and slippage.
 - **Analytics suite** — metrics, IC, decay, turnover, regime splits, factor correlations.
 - **ML ensemble** — walk-forward LightGBM factor combination with conformal prediction intervals.
-- **Visualization + reports** — publication-ready plots and HTML reports.
+- **Visualization + reports** — publication-ready plots and interactive HTML research reports.
+- **Streamlit dashboard** — point-and-click factor exploration.
 
 ## Get started
 
-See the [Quickstart](quickstart.md) to run your first backtest.
+See the [Quickstart](quickstart.md) to run your first backtest, the [Dashboard guide](dashboard.md) for the interactive UI, and the [Research Report guide](report.md) for generating HTML reports.
 
 ## License
 

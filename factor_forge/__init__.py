@@ -1,6 +1,6 @@
 """Factor Forge — a modern, reproducible factor zoo replication engine."""
 
-__version__ = "0.1.2"
+__version__ = "0.5.0"
 
 from factor_forge.analytics.metrics import compute_metrics
 from factor_forge.backtest.engine import BacktestEngine, BacktestResult

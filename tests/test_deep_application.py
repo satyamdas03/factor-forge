@@ -59,7 +59,7 @@ def _make_prices(n_symbols: int = 10, seed: int = 42) -> pd.DataFrame:
 
 class TestPackageIntegrity:
     def test_version(self) -> None:
-        assert factor_forge.__version__ == "0.1.2"
+        assert factor_forge.__version__ == "0.5.0"
 
     def test_all_exports_importable(self) -> None:
         for name in factor_forge.__all__:

@@ -31,11 +31,25 @@ print(result.metrics)
 ## Compare all factors
 
 ```bash
-factor-forge --factor all --start 2015-01-01 --end 2024-01-01 --top-n 500
+factor-forge --factor all --start 2015-01-01 --end 2024-01-01
+```
+
+## Generate an HTML research report
+
+```bash
+ff-report --factor momentum_12_1 --start 2020-01-01 --end 2022-12-31 --source synthetic --symbols A,B,C,D,E --output reports
+```
+
+## Launch the dashboard
+
+```bash
+pip install "factor-forge-quant[dashboard]"
+ff-dashboard
 ```
 
 ## Next steps
 
 - Read the [Factors](factors.md) guide to add your own.
+- Explore the [Dashboard](dashboard.md) and [Research Reports](report.md) guides.
 - Explore the [API Reference](api.md) for detailed module docs.
 - Read the [research blog](blog/factor-zoo-2020s.md) for empirical findings.
